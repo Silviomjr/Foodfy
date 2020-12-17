@@ -1,23 +1,37 @@
-const modalOverlay = document.querySelector('.modal-overlay');
-const modalContent = document.querySelector('.modal-content');
 const introCards = document.querySelectorAll('.intro-card');
+const hideshow = document.querySelectorAll('.ingredients');
 
-for (let introCard of introCards) {
+
+for (let i = 0; i < introCards.length; i++) {
     
-    introCard.addEventListener("click", function() {            
+    introCards[i].addEventListener("click", function() {            
         
-        modalContent.querySelector('img').src = introCard.querySelector("img").src;
-        modalContent.querySelector("h2").firstChild.data = introCard.querySelector('h3').firstChild.data;
-        modalContent.querySelector('p').firstChild.data = introCard.querySelector("p").firstChild.data;
-
-        modalOverlay.classList.add('active');        
+        window.location.href = `/recipes/${i}`;
     });
 }
+for (let button of hideshow) {
+    const showButton = button.querySelector('.hide-show');
+    showButton.addEventListener("click", () => {
+        if(button.querySelector('ul').className == 'deactivate') {
+            button.querySelector('ul').classList.remove('deactivate');
+            button.querySelector('ul').classList.add('active');
+            button.querySelector('.hide-show').innerHTML = 'ESCONDER';
+        } else {
+            button.querySelector('ul').classList.remove('active');
+            button.querySelector('ul').classList.add('deactivate');
+            
+            button.querySelector('.hide-show').innerHTML = 'MOSTRAR';
+        }
+    });
 
-document.querySelector(".close-modal").addEventListener("click", function() {
-    modalOverlay.classList.remove("active");    
-    modalContent.querySelector('img').src = "";
-        modalContent.querySelector("h2").firstChild.data = "";
-        modalContent.querySelector('p').firstChild.data = ""; 
-});
+}
+
+var fileName = location.href.split('/'); 
+
+if (fileName.includes('recipes')) {
+    document.querySelector('.recipes').classList.add('bold-text');
+} else if (fileName.includes('about')) {
+    document.querySelector('.about').classList.add('bold-text');
+};
+
 

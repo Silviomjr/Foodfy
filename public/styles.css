@@ -103,9 +103,14 @@ header img {
     
 }
 
+.intro-card {
+    cursor: pointer;
+}
+
 .intro-card img {
     width: 100%;
     border-radius: 15px;
+    
 }
 
 .intro-card-content {
@@ -230,3 +235,92 @@ header img {
     cursor: pointer;
 }
 
+/* Recipe content */
+
+.show-recipe {
+    margin-top: 50px;
+    
+}
+
+.recipe-content {
+    
+    text-align: center;
+}
+
+.recipe-text-content {
+    margin-top: 50px;
+}
+
+.recipe-content img {
+    border-radius: 15px;
+    width: 100%;
+}
+
+.recipe-text-content h3 {
+    font-size: 36px;
+    color: #111111;
+}
+.recipe-text-content p {
+    font-size: 20px;
+    color: #777777;
+}
+
+.recipe-infos{
+    margin: 50px auto;
+}
+
+.ingredients {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    align-items: baseline;
+    
+}
+
+
+
+.menu p {
+    font-size: 24px;
+    
+    color: #111111;
+    font-weight: bold;
+}
+
+.menu span {
+    font-size: 12px;
+    color: #999999;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.ingredients ul.deactivate {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    margin-bottom: 50px;
+    
+}
+
+.ingredients ul.active {
+    margin-top: 20px;
+    margin-bottom: 39px;
+    list-style-position: inside;
+    font-size: 18px;
+    line-height: 28px;
+    color: #444444;
+    visibility: visible;
+    opacity: 1;
+}
+
+.aditional-infos {
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+    font-family: 'Roboto', sans-serif;
+    white-space: pre-line;
+    margin-top: 20px;
+}
