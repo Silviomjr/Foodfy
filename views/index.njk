@@ -1,13 +1,10 @@
 {% extends "layout.njk" %}
 
-{% block header %}
-    <header>
-        <a href="/about">Sobre</a>
-        <a href="/recipes">Receitas</a>
-        <a href="/"> <img src="/assets/images/logo.png" alt="Foodfy logo"></a>
-    </header>
-{% endblock %}
-
+{% block header%}
+    <div class="admin-tag">
+        <a href="/admin/recipes" class="about">Gerenciar Receitas</a>
+    </div>
+{% endblock%}
 {% block content %}
 
 
@@ -44,5 +41,5 @@
     </div>
     
     
- 
+
 {% endblock %}

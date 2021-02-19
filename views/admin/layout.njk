@@ -11,15 +11,13 @@
 
 <body>
 
-    <div class="body">
+    <div class="admin-body">
         
         
-            <header>
-                <div><a href="/" class="toHome"> <img src="/assets/images/logo.png" alt="Foodfy logo"></a></div>
-                <a href="/about" class="about">Sobre</a>
-                <a href="/recipes" class="recipes">Receitas</a>
-                
-
+            <header id="admin">
+                <div class='admin-header'>
+                    <a href="/" class="toHome"> <img src="/assets/images/logo-white.png" alt="Foodfy logo"></a>
+                </div>
                 {% block header%}{%endblock%}
             </header>
         
@@ -27,11 +25,7 @@
         {% block content %}{% endblock %}
         
     </div>
-    
-    <div class="footer">
-        <p>Todos os direitos reservados, receitas Foodfy.</p> 
-    </div>
 
-    <script src="/scripts.js"></script>
+    <script src="/admin-controls/scripts.js"></script>
 </body>
 </html>

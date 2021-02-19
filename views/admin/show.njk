@@ -1,0 +1,61 @@
+{% extends "admin/layout.njk" %}
+
+{% block content %}
+    <div class="admin-display">
+        <div class="show-header">
+            <h2>Receita: {{informations.title}}</h2>
+            <a href="/admin/recipes/{{informations.id}}/edit" class="admin-create-recipe">Editar receita</a>
+        </div>
+
+
+        <div class="show-recipe">
+            
+            <div class="recipe-content">
+                <img src="{{informations.image}}" alt="{{informations.title}} image">
+                <div class="recipe-text-content">
+                    <h3>{{informations.title}}</h3>
+                    <p>por {{informations.author}}</p>
+                </div>
+            </div>
+            
+            <div class="recipe-infos">
+                <div class="ingredients">
+                    <div class="menu">
+                        <p>Ingredientes</p>
+                        
+                    </div>
+                    <ul class="active" style="list-style-type: '- '; ">
+                        {% for ingredient in informations.ingredients %}
+                        <li>{{ingredient}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+                <div class="ingredients">
+                    <div class="menu">
+                        <p>Modo de preparo</p>
+                        
+                    </div>
+                    <ul class="active" style="list-style-type: '- '; ">
+                        {% for preparation in informations.preparation %}
+                        <li>{{preparation}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="ingredients">
+                    <div class="menu">
+                        <p>Informações adicionais</p>
+                        
+                    </div>
+                    <ul>
+                        <pre class="aditional-infos">{{informations.information}}</pre>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
+{% endblock %}   

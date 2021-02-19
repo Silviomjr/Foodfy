@@ -36,8 +36,14 @@ header a:nth-child(1) {
     margin-left: 213px;
 }
 
-header a:nth-child(2) {
+header a + a {
     margin-left: 30px;
+}
+
+.admin-tag {
+    display: flex;
+    justify-content: end;
+    width: 100%;
 }
 
 header img {
@@ -324,3 +330,152 @@ header img {
     white-space: pre-line;
     margin-top: 20px;
 }
+
+#admin {
+    width: 100%;
+    height: 80px;
+    background-color: #000000;
+    margin: 0;
+    display: flex;
+    align-items: center;
+
+}
+
+.admin-header {
+    width: 940px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.admin-display {
+    margin: 50px auto;
+    width: 940px;
+    
+}
+
+
+
+.admin-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 40px;
+    margin-top: 30px;
+}
+
+.admin-card {
+    display: grid;
+    align-content: center;
+    width: 100%;
+    align-content: stretch;
+    grid-template-columns: 40% 60%;
+    column-gap: 20px;
+}
+
+.admin-card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8.57px;
+}
+
+.admin-card-content p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #777777;
+}
+
+.admin-card-content div {
+    margin-top: 10px;
+}
+
+.admin-card-content div a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #6558C3;
+    font-weight: bold;
+    padding-top: 10px;
+
+}
+
+
+.show-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#create-form div:first-child button,
+.show-header button,
+.admin-create-recipe {
+    background: #6558C3;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: right;
+    padding: 9px 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.show-header .delete-button {
+    background: #DC4747;
+}
+
+.form-item {
+    margin-top: 30px;
+}
+
+.form-item-title {
+    color: #111111;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form-item-field {
+    
+    background: #FFFFFF;
+    
+    
+    font-size: 16px;
+    color: #111111;
+}
+
+.form-item-field input {
+    outline: none;
+    padding: 15px 20px;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+}
+
+.form-item-field + .form-item-field {
+    margin-top: 10px;
+}
+
+.add-ingredient,
+.add-step {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #6558C3;
+    text-align: right;
+    font-weight: bold;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+
+textarea {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    resize: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    color: #111111;
+    line-height: 24px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+}
+
+
