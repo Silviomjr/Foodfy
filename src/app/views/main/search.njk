@@ -1,0 +1,39 @@
+{% extends 'main/layout.njk' %}
+
+
+{% block header%}
+    <div class="admin-tag">
+        <form action="/search" method="GET">
+            <input 
+                type="text"
+                name="filter"
+                placeholder="Procure uma receita"
+                value={{filter}}
+            >
+
+            <button type="submit" class="admin-create-recipe">Filtrar</button>
+        </form>
+    </div>
+{% endblock%}
+
+{% block content %}
+    <div class="most-acessed">
+        <h2>
+            Buscando por "{{filter}}"
+        </h2>
+
+        <div class="intro-cards">
+            {% for info in infos %}
+                <div class="intro-card {{info.id}}">
+                    <img src="{{info.image}}" alt="{{info.image}} image" class="search-fitler-img">
+                    <div class="intro-card-content">
+                        <h3 class="search-filter-h3">{{info.title}}</h3>
+                        <p>por {{info.author}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+
+            
+        </div>
+    </div>
+{% endblock %}

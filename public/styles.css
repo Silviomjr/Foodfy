@@ -111,10 +111,13 @@ header img {
 
 .intro-card {
     cursor: pointer;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .intro-card img {
     width: 100%;
+    height: 92px;
     border-radius: 15px;
     
 }
@@ -248,7 +251,8 @@ header img {
     
 }
 
-.recipe-content {
+.recipe-content,
+.chef-content {
     
     text-align: center;
 }
@@ -373,7 +377,7 @@ header img {
 
 .admin-card img {
     width: 100%;
-    height: 100%;
+    height: 74px;
     border-radius: 8.57px;
 }
 
@@ -478,4 +482,119 @@ textarea {
     border-radius: 4px;
 }
 
+.admin-header a:first-child {
+    margin: 0;
+}
 
+
+.admin-header button {
+    margin-left: 141px;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.admin-header button + button {
+    margin-left: 30px;
+}
+
+.admin-header button a {
+    margin: 0;
+    border: none;
+    color: #999999;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.admin-header .adm-highlight a {
+    color:  #FFFFFF;
+}
+
+/* chefs config */
+
+.admin-cards-chefs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px 20px;
+    margin-top: 30px;
+}
+
+.admin-cards-chefs .admin-card {
+    grid-template-columns: 64px 1fr;
+}
+
+.admin-cards-chefs img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+.admin-cards-chefs h3 {
+    font-size: 18px;
+    color: #111111;
+}
+
+/* show chef style */
+
+.show-chef {
+    margin-top: 30px;
+}
+.chef_image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.chef-infos {
+    margin-top: 30px;
+}
+
+.chef-infos h3 {
+    font-size: 36px;
+    color: #111111;
+    font-weight: bold;
+}
+
+.chef-infos p {
+    font-size: 20px;
+    color: #777777;
+}
+
+.chef-recipe-title {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #111111;
+    font-weight: bold;
+}
+
+.chef-recipe {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
+}
+
+
+.show-header .delete-button[disabled] {
+    background: #777;
+    cursor: not-allowed;
+}
+
+.admin-tag input {
+
+    font-size: 14px;
+    color: #111111;
+    padding: 11px 110px 10px 15px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+.intro-card .search-fitler-img {
+    height: 140px;
+}
+
+.search-filter-h3 {
+    font-size: 18px;
+    color: #111111;
+    font-weight: normal;
+}

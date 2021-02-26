@@ -1,14 +1,20 @@
 const introCards = document.querySelectorAll('.intro-card');
 const hideshow = document.querySelectorAll('.ingredients');
 
-
-for (let i = 0; i < introCards.length; i++) {
+function linkClick() {
+    const introCards = document.querySelectorAll('.intro-card');
+    for(let introCard of introCards) {
+        const id = introCard.classList[1];
     
-    introCards[i].addEventListener("click", function() {            
-        
-        window.location.href = `/recipes/${i}`;
-    });
+        introCard.addEventListener("click", () => {
+            window.location.href = `/recipes/${id}`;
+        });
+    }
+};
+if(introCards) {
+    linkClick();
 }
+
 for (let button of hideshow) {
     const showButton = button.querySelector('.hide-show');
     showButton.addEventListener("click", () => {
@@ -32,6 +38,8 @@ if (fileName.includes('recipes')) {
     document.querySelector('.recipes').classList.add('bold-text');
 } else if (fileName.includes('about')) {
     document.querySelector('.about').classList.add('bold-text');
+} else if(fileName.includes('chefs')) {
+    document.querySelector('.chefs').classList.add('bold-text');
 };
 
 

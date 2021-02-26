@@ -1,18 +1,5 @@
 <div class="form-item">
     <div class="form-item-title">
-        <p>Nome do autor</p>
-    </div>
-    <div class="form-item-field">
-        <input 
-            type="text"
-            name="author"
-            placeholder="Insira seu nome"
-            value="{{fields.author}}">
-    </div>
-</div>
-
-<div class="form-item">
-    <div class="form-item-title">
         <p>Nome da receita</p>
     </div>
     <div class="form-item-field">
@@ -20,7 +7,7 @@
             type="text"
             name="title"
             placeholder="Nome da receita"
-            value="{{fields.title}}">
+            value="{{recipe.title}}">
     </div>
 </div>
 
@@ -33,22 +20,42 @@
             type="url"
             name="image"
             placeholder="https://"
-            value="{{fields.image}}">
+            value="{{recipe.image}}">
     </div>
 </div>
 
 <div class="form-item">
     <div class="form-item-title">
+        <p>Chef</p>
+    </div>
+    <div class="form-item-field">
+        <select name="chef_id">
+            {% for chef in chefs %}
+                <option value="{{chef.id}}"
+                {% if recipe.chef_id == chef.id %}
+                    selected
+                {% endif %}
+                >
+                    {{chef.name}}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+
+
+<div class="form-item">
+    <div class="form-item-title">
         <p>Ingredientes</p>
     </div>
-    {% for ingredient in fields.ingredients %}
+    {% for ingredient in recipe.ingredients %}
         <div id="ingredients">
             <div class="form-item-field ingredient">
-                <input 
-                    type="text"
-                    name="ingredients[]"
-                    placeholder="Insira seu ingrediente"
-                    value="{{ingredient}}">
+                    <input 
+                        type="text"
+                        name="ingredients[]"
+                        placeholder="Insira seu ingrediente"
+                        value="{{ingredient}}">
             </div>
         </div>
     {% else %}
@@ -71,7 +78,7 @@
         <p>Modo de preparo</p>
     </div>
 
-        {% for step in fields.preparation %}
+        {% for step in recipe.preparation %}
             <div id="preparation-steps">
                 <div class="form-item-field step">
                         <input 
@@ -106,7 +113,7 @@
             placeholder=""
             rows="10"
             form="create-form"
-            >{{ fields.information }}</textarea>
+            >{{ recipe.information }}</textarea>
     </div>
     
 </div>

@@ -14,7 +14,7 @@ function addIngredient() {
     ingredients.appendChild(newField);
   }
 
-if (window.location.href.includes('create')) {
+if ((window.location.href.includes('create') || window.location.href.includes('edit')) && window.location.href.includes('recipe')) {
   document
   .querySelector(".add-ingredient")
   .addEventListener("click", addIngredient);
@@ -38,7 +38,7 @@ function addStep() {
     preparationSteps.appendChild(newField);
   }
 
-if (window.location.href.includes('create')) {
+if ((window.location.href.includes('create') || window.location.href.includes('edit')) && window.location.href.includes('recipe')) {
   document
   .querySelector(".add-step")
   .addEventListener("click", addStep);
@@ -46,17 +46,38 @@ if (window.location.href.includes('create')) {
 
 // management of visualizations
 
-if (!window.location.href.includes('create')) {
-  const adminCards = document.querySelectorAll(".admin-card");
-  const keys = Object.keys(adminCards);
-  const links = document.querySelectorAll(".admin-card-link")
-  // console.log(links);
-  for (let key in keys) {
+// if (!window.location.href.includes('create')) {
+//   const adminCards = document.querySelectorAll(".admin-card");
+//   const keys = Object.keys(adminCards);
+//   const links = document.querySelectorAll(".admin-card-link")
+//   // console.log(links);
+//   for (let key in keys) {
     
-    links[key].addEventListener("click", () => {
+//     links[key].addEventListener("click", () => {
       
-      links[key].href = `recipes/${key}`;
-    })
-  }
+//       links[key].href = `recipes/${key}`;
+//     })
+//   }
 
+// }
+
+// highlight upper menu
+
+function highlight() {
+   const topMenu = document.querySelector('.admin-header');
+   const href = window.location.href;
+
+   for (let menu of topMenu.childNodes) {
+     if(menu.nodeName == "BUTTON") {
+       if(menu.className.includes('recipe') && href.includes('recipe')) {
+        menu.classList.add('adm-highlight');
+       } else if(menu.className.includes('chef') && href.includes('chef')) {
+        menu.classList.add('adm-highlight');
+       }
+     }
+   }
+};
+
+if (window.location.href.includes('admin')) {
+  highlight();
 }

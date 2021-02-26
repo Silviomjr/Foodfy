@@ -1,4 +1,4 @@
-{% extends "layout.njk" %}
+{% extends "main/layout.njk" %}
 
 
 {% block content %}
@@ -7,7 +7,7 @@
             <div class="intro-cards">
                 
                 {% for recipe in recipes %}
-                <div class="intro-card">
+                <div class="intro-card {{recipe.id}}">
                     <img src="{{recipe.image}}" alt="{{recipe.title}} image">
                     <div class="intro-card-content">
                         <h3>{{recipe.title}}</h3>

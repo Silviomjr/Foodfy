@@ -1,0 +1,48 @@
+{% extends "admin/layout.njk" %}
+
+{% block content %}
+    <div class="admin-display">
+        <div class="show-header">
+            <h2>Chef: {{chef.name}}</h2>
+            <a href="/admin/chefs/{{chef.id}}/edit" class="admin-create-recipe">Editar chef</a>
+        </div>
+
+
+        <div class="show-chef">
+            <div class="chef-content">
+                <img src="{{chef.avatar_url}}" alt="{{chef.name}} image" class="chef_image">
+                <div class="chef-infos">
+                    <h3>{{chef.name}}</h3>
+                    {% if (chef.total_recipes == 1) or (chef.total_recipes == 0) %}
+                        <p>{{chef.total_recipes}} receita</p>
+                    {% else %}
+                        <p>{{chef.total_recipes}} receitas</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="chef-recipes">
+            <p class="chef-recipe-title">Receitas</p>
+
+            <div class="chef-recipe">
+                {% for recipe in recipes %}
+                <div class="admin-card">
+                    <img src="{{recipe.image}}" alt="image">
+                    <div class="admin-card-content">
+                        <h3>{{recipe.title}}</h3>
+                        <p>por {{chef.name}}</p>
+                        <div>
+                            <a href="/admin/recipes/{{recipe.id}}" class="admin-card-link">Visualizar</a>
+                        </div>
+                    </div>    
+                </div>
+                {% endfor %}
+            </div>
+
+            
+        </div>
+    </div>
+
+    
+{% endblock %}   

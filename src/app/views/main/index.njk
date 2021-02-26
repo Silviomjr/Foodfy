@@ -1,8 +1,17 @@
-{% extends "layout.njk" %}
+{% extends "main/layout.njk" %}
 
 {% block header%}
     <div class="admin-tag">
-        <a href="/admin/recipes" class="about">Gerenciar Receitas</a>
+        <form action="/search" method="GET">
+            <input 
+                type="text"
+                name="filter"
+                placeholder="Procure uma receita"
+                value={{filter}}
+            >
+
+            <button type="submit" class="admin-create-recipe">Filtrar</button>
+        </form>
     </div>
 {% endblock%}
 {% block content %}
@@ -27,7 +36,7 @@
 
         <div class="intro-cards">
             {% for recipe in recipes %}
-            <div class="intro-card">
+            <div class="intro-card {{recipe.id}}">
                 <img src="{{recipe.image}}" alt="{{recipe.image}} image">
                 <div class="intro-card-content">
                     <h3>{{recipe.title}}</h3>

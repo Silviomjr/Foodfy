@@ -1,0 +1,31 @@
+{% extends "admin/layout.njk" %}
+
+{% block content %}
+    <div class="admin-display">
+        <div class="show-header">
+            <h2>Editando chef</h2>
+            <div>
+                {% if chef.total_recipes == 0%}
+                    <button form="delete-form" type="submit" class="delete-button">Deletar</button>
+                {% else %}
+                    <button form="delete-form" type="submit" class="delete-button" disabled>Deletar</button>
+                {%endif%}
+                <button form="create-form" type="submit">Salvar chef</button>
+                    
+            </div>
+        </div>
+
+        <form method="POST" action="/admin/chefs?_method=PUT" id="create-form">
+
+            {% include "admin/chefs/fields.njk" %}
+
+            <input type="hidden" name="id" value={{chef.id}}>
+        </form>
+
+        <form method="POST" action="/admin/chefs?_method=DELETE" id="delete-form" type="hidden">
+            <input type="hidden" name="id" value={{chef.id}}>
+        </form>
+
+        {% include 'admin/chefs/confirm.njk' %}
+    </div>
+{% endblock %}
